@@ -1,0 +1,26 @@
+.msg-error{
+  color:red;
+  border-color:red;
+  border-style:solid;
+}
+.msg-info{
+  color:green;
+  border-color:green;
+  border-style:solid;
+}
+.main{
+  width  : 500px;
+  height : 200px;
+  margin-left:  10px;
+  margin-right: 10px;
+  display: block;
+  position: relative;;
+}
+.box{
+  width: 100px;
+  height:20px;
+  margin-left: 2px;
+  margin-right: 2px;
+  position: relative;
+  display: inline;
+}
