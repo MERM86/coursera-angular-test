@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app='Shopping'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <style> body { font-size: 1.2em; }</style>
+    <title>Shopping</title>
+  </head>
+  <body>
+    <h1 class="title"><span class="label label-primary">Shopping </span></h1>
+    <div class="container">
+      <div class="row">
+        <div clas="col-md-2"></div>
+        <div clas="col-md-4">
+          <h3><span class="label label-success">To Buy </span></h3>
+          <div id="list1" ng-controller='ShoppingItemListController as buyList'>
+            <!--<input type="text" ng-model="buyList.name" placeholder="item name">
+            <input type="text" ng-model="buyList.quantity" placeholder="quantity">
+            <button ng-click="buyList.addItem();">Add Item</button>-->
+            <center><h3><span ng-if="buyList.items.length==0" class="alert alert-info">Everything is bought!</span></h3></center>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in buyList.items">
+                Buy {{ item.quantity }} {{ item.name }}
+                <button  class="btn btn-default" ng-click="buyList.buyItem($index);"> Buy </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div clas="col-md-4">
+          <div id="list2" ng-controller='BoughtItemListController as boughtList'>
+            <h3><span class="label label-success">Already Bought </span></h3>
+            <center><h3><span ng-if="boughtList.items.length ==0" class="alert alert-info">Nothing bought yet</span><h3></center>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in boughtList.items">
+                Boought {{ item.quantity }}  {{ item.name }}
+
+                <!--<button ng-click="boughtList.cancelItem($index);">Cancel Item</button>-->
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div clas="col-md-2"></div>
+      </div>
+  </div>
+  </body>
+</html>
