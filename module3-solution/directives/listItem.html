@@ -1,0 +1,19 @@
+<h3><span class="label label-success">Items Founds</span></h3></h3>
+{{filterList}}
+<ul class="list-group">
+      <div class="row">
+        <div class="col-md-2"><h4><span class="label label-default">Name</span></h4></div>
+        <div class="col-md-2"><h4><span class="label label-default">Short Name</span></h4></div>
+        <div class="col-md-6"><h4><span class="label label-default">Description</span></h4></div>
+        <div class="col-md-2"></div>
+      </div>
+
+    <li class="list-group-item" ng-repeat="item in items ">
+      <div class="row">
+        <div class="col-md-2">{{ item.name }} , </div>
+        <div class="col-md-2">{{item.short_name}} , </div>
+        <div class="col-md-6">{{item.description}}</div>
+        <div class="col-md-2"> <button ng-click="removeItem({index: $index});">Remove Item</button></div>
+      </div>
+    </li>
+</ul>

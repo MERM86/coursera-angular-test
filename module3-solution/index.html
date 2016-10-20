@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <style> body { font-size: 1.2em; }</style>
+    <title>Shopping</title>
+  </head>
+  <body>
+    <div class="container" ng-controller="NarrowItDownController as searchCtrl">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <br>
+     <div class="row">
+       <div class="col-md-3"></span></div>
+       <div class="col-md-6">
+          <div class="row">
+            <div class="form-group">
+              <input type="text" ng-model="searchCtrl.searchTerm"placeholder="search term" class="form-control">
+            </div>
+          </div>
+         <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="form-group narrow-button">
+                <button class="btn btn-primary" ng-click="searchCtrl.search(searchCtrl.searchTerm)">Narrow It Down For Me!</button>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+         </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <!-- Bonus loader (see Bonus section of the assignment) -->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><div class="loader" ng-if='searchCtrl.ajaxActive'></div></div>
+          <div class="col-md-4"></div>
+        </div>
+        <!-- found-items should be implemented as a component -->
+
+        <div id="message" class="alert alert-success" role="alert" ng-if="searchCtrl.notFound"><h4>Not Found</h4></div>
+        <list-item-menu ng-if="searchCtrl.found.length >0"
+          id="listItems1"
+          ctr-list="searchCtrl.found",
+          remove-item="searchCtrl.removeItem(index)"
+          /></list-item-menu>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
