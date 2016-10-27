@@ -2,7 +2,7 @@
   'use strict';
   angular.module('DataModule')
   .component('categoriesList',{
-    templateUrl: '../../html/components/categories-component.html',
+    templateUrl: 'html/components/categories-component.html',
     //controller:CategoriesListController,
     bindings: {
       categories: '<'
