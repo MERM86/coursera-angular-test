@@ -17,7 +17,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'module4-solution/html/templates/home.template.html'
+    templateUrl: 'html/templates/home.template.html'
   })
 
   // Categories list page
