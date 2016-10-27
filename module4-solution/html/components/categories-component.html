@@ -1,0 +1,18 @@
+<h3><span class="label label-success">Categories</span></h3></h3>
+
+<ul class="list-group">
+      <div class="row">
+        <div class="col-md-4"><h4><span class="label label-default">Id</span></h4></div>
+        <div class="col-md-4"><h4><span class="label label-default">Name</span></h4></div>
+        <div class="col-md-4"><h4><span class="label label-default">Short Name</span></h4></div>
+      </div>
+
+    <li class="list-group-item" ng-repeat="item in $ctrl.categories ">
+      <div class="row">
+        <div class="col-md-4">{{item.id}}</div>
+        <div class="col-md-4">{{ item.name }}</div>
+        <div class="col-md-4"><a ui-sref="categories.items({short_name:item.short_name})">{{item.short_name}}</a></div>
+        <!--<div class="col-md-4">{{item.special_instructions}}</div>-->
+      </div>
+    </li>
+</ul>

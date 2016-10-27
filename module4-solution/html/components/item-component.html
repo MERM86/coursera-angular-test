@@ -1,3 +1,4 @@
+<details>
 <h3><span class="label label-success">Items</span></h3></h3>
 <ul class="list-group">
       <div class="row">
@@ -7,12 +8,12 @@
 
       </div>
 
-    <li class="list-group-item" ng-repeat="item in items ">
+    <li class="list-group-item" ng-repeat="item in $ctrl.items ">
       <div class="row">
-        <div class="col-md-4">{{ item.name }} , </div>
+        <div class="col-md-4">{{item.name }} , </div>
         <div class="col-md-4">{{item.short_name}} , </div>
         <div class="col-md-4">{{item.description}}</div>
-
       </div>
     </li>
 </ul>
+</details>
