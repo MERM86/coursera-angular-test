@@ -23,14 +23,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Categories list page
   .state('categories', {
     url: '/categories',
-    templateUrl: '../html/templates/categories.template.html',
+    templateUrl: 'html/templates/categories.template.html',
     controller :'CategoriesController as categoriesController'
   })
 
   // Item detail
   .state('categories.items', {
     url: '/item-detail/{short_name}',
-    templateUrl: '../html/templates/item-detail.template.html',
+    templateUrl: 'html/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemDetailController',
     resolve   :{
                  items : ['$stateParams','DataService', function ($stateParams,DataService){
