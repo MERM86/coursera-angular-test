@@ -1,0 +1,12 @@
+<div class="container" ng-controller='SignupController as ctrlSignup2'>
+
+  <div ng-if='ctrlSignup2.isLogin()'>
+    <h2  class="text-center">
+      Users Preferences
+    </h2>
+    <my-info user-preferences='ctrlSignup2.getPreferences()'></my-info>
+  </div>
+  <div ng-if='!ctrlSignup2.isLogin()'>
+      <a ui-sref='public.signup' class="btn btn-default" >Sign up Now!</a>
+  </div>
+</div>

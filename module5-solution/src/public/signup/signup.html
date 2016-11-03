@@ -1,0 +1,50 @@
+<div class="container" ng-controller='SignupController as singupCtrl'>
+  <form name="signupForm" novalidate>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input name="firstName" type="text" class="form-control" id="firstName" placeholder="Fisrt Name" ng-model='singupCtrl.userdata.firstName'
+      required
+      minlength='4'
+      ng-maxlength='10'>
+
+      <span ng-if="(signupForm.firstName.$error.minlength || signupForm.firstName.$error.required)
+                    && signupForm.firstName.$touched" >First Name must be at least 4 characters a long</span>
+      <span ng-if="(signupForm.firstName.$error.maxlength )
+                                  && signupForm.firstName.$touched" >First Name  must  not be longer than 10 Characters</span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model='singupCtrl.userdata.lastName'
+      required
+      minlength='4'
+      ng-maxlength='10'>
+
+      <span ng-if="(signupForm.lastName.$error.minlength || signupForm.lastName.$error.required)
+                    && signupForm.lastName.$touched" >Last Name must be at least 4 characters a long</span>
+      <span ng-if="(signupForm.lastName.$error.maxlength )
+                                  && signupForm.lastName.$touched" >Last Name must  not be longer than 10 Characters</span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input name="email" type="email" class="form-control" id="email" placeholder="Email" ng-model='singupCtrl.userdata.email'
+      required>
+
+      <span ng-if="signupForm.email.$invalid  && signupForm.email.$touched" >Must be a Valid email address :some@hostdamain format</span>
+
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Phone Number" ng-model='singupCtrl.userdata.phoneNumber'
+      pattern='\d{3}-\d{3}-\d{4}'>
+      <span ng-if="signupForm.phoneNumber.$invalid  && signupForm.phoneNumber.$touched" >Phone Number must be in the  format: ###-###-####</span>
+    </div>
+    <div class="form-group">
+      <label for="dish">Favorite Dish</label>
+      <input name"dish" =type="text" class="form-control" id="dish" placeholder="Dish" ng-model='singupCtrl.userdata.dish'>
+      <span ng-if='singupCtrl.error'>No such menu number exists</span>
+    </div>
+  <button type="submit" class="btn btn-default" ng-disabled='signupForm.$invalid' ng-click='singupCtrl.setPreferences(singupCtrl.userdata.dish)'>Submit</button>
+  </form>
+  <span ng-if='singupCtrl.displayMessage'>Your information has been saved.</span>
+
+</div>
